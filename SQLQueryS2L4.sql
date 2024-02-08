@@ -28,11 +28,11 @@ from Impiegati
 select avg(RedditoMensile) as MediaRedditi
 from Impiegati
 
-select Top 1 (RedditoMensile)
+select Top 1 (RedditoMensile) as RedditoPiuAlto
 from Impiegati
 order by RedditoMensile desc
 
-select top 1 (RedditoMensile)
+select top 1 (RedditoMensile) as RedditoPiuBasso
 from Impiegati
 order by RedditoMensile asc
 
@@ -52,6 +52,7 @@ where i.Tipoimpiego = @tipoimpiego
 select avg(eta) as MediaEta
 from Impiegati
 
+/*
 Create procedure InserisciImpiegato
 @IdImpiego int,
 @Cognome varchar(50),
@@ -66,7 +67,9 @@ Begin
 insert into Impiegati (IDImpiego, Cognome, Nome, CodiceFiscale, Eta, RedditoMensile, DestrazioneFiscale, DataAssunzione)
 values (@IdImpiego, @Cognome, @Nome, @CodiceFiscale, @Eta, @redditomensile, @detrazionefiscale, @DataAssunzione)
 END;
+*/
 
+/*
 Create procedure AggiornaImpiegato
 @IdImpiegato int,
 @IdImpiego int,
@@ -91,7 +94,9 @@ DetrazioneFiscale = @DetrazioneFiscale,
 DataAssunzione = @DataAssunzione
 Where IDImpiegato = @IdImpiegato;
 END;
+*/
 
+/*
 create procedure EliminaImpiegato
 @IdImpiegato int
 as
@@ -99,3 +104,4 @@ begin
 delete from Impiegati
 where IdImpiegato = @IdImpiegato;
 END;
+*/
